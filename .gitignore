@@ -1,0 +1,5 @@
+ProjectToTest/bin/*
+ProjectToTest/obj/*
+ProjectToTest.UnitTests/bin/*
+ProjectToTest.UnitTests/obj/*
+.vs/*
