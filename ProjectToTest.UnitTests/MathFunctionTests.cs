@@ -5,10 +5,17 @@ namespace ProjectToTest.UnitTests
     [TestFixture]
     internal class MathFunctionTests
     {
+        private MathFunctions func;
+
+        [SetUp]
+        public void SetUp()
+        {
+            func = new MathFunctions();
+        }
+
         [Test]
         public void Add_BothPositive_ReturnPositive()
         {
-            MathFunctions func = new MathFunctions();
             int result = func.Add(10, 13);
             Assert.That(result, Is.EqualTo(23));
         }
@@ -16,7 +23,6 @@ namespace ProjectToTest.UnitTests
         [Test]
         public void Add_BiggerPositive_ReturnPositive()
         {
-            MathFunctions func = new MathFunctions();
             int result = func.Add(12, -5);
             Assert.That(result, Is.EqualTo(7));
         }
@@ -24,7 +30,6 @@ namespace ProjectToTest.UnitTests
         [Test]
         public void Add_BiggerNegative_ReturnNegative()
         {
-            MathFunctions func = new MathFunctions();
             int result = func.Add(-12, 10);
             Assert.That(result, Is.EqualTo(-2));
         }
@@ -32,7 +37,6 @@ namespace ProjectToTest.UnitTests
         [Test]
         public void Max_BothEqual_ReturnIntMax()
         {
-            MathFunctions func = new MathFunctions();
             int result = func.Max(10, 10);
             Assert.That(result, Is.EqualTo(int.MaxValue));
         }
@@ -40,7 +44,6 @@ namespace ProjectToTest.UnitTests
         [Test]
         public void Max_FirstBigger_ReturnFirst()
         {
-            MathFunctions func = new MathFunctions();
             int result = func.Max(13, 10);
             Assert.That(result, Is.EqualTo(13));
         }
