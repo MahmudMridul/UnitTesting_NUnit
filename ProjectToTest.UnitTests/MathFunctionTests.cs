@@ -35,17 +35,13 @@ namespace ProjectToTest.UnitTests
         }
 
         [Test]
-        public void Max_BothEqual_ReturnIntMax()
+        [TestCase(10, 10, int.MaxValue)]
+        [TestCase(12, 10, 12)]
+        [TestCase(10, 14, 14)]
+        public void Max_WhenCalled_ReturnMax(int first, int second, int expected)
         {
-            int result = func.Max(10, 10);
-            Assert.That(result, Is.EqualTo(int.MaxValue));
-        }
-
-        [Test]
-        public void Max_FirstBigger_ReturnFirst()
-        {
-            int result = func.Max(13, 10);
-            Assert.That(result, Is.EqualTo(13));
+            int result = func.Max(first, second);
+            Assert.That(result, Is.EqualTo(expected));
         }
 
     }
