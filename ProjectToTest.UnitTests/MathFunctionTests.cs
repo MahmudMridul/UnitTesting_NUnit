@@ -14,6 +14,7 @@ namespace ProjectToTest.UnitTests
         }
 
         [Test]
+        [Ignore("Testing Ignore")]
         public void Add_BothPositive_ReturnPositive()
         {
             int result = func.Add(10, 13);
