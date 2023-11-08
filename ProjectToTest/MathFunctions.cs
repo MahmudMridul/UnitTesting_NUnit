@@ -14,5 +14,16 @@ namespace ProjectToTest
             if (y > x) return y;
             return int.MaxValue;
         }
+
+        public IEnumerable<int> GetOddNumbers(int limit)
+        {
+            for(int i = 0; i <= limit; ++i)
+            {
+                if(i % 2 == 1)
+                {
+                    yield return i;
+                }
+            }
+        }
     }
 }
